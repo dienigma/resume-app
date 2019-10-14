@@ -1,6 +1,6 @@
 import React from "react";
-
-const About = () => {
+import { connect } from "react-redux";
+const About = ({ firstName, lastName, email, phone, location }) => {
   return (
     <div className="card">
       <div className="card-image">
@@ -15,10 +15,10 @@ const About = () => {
       <div className="card-content">
         <div className="media">
           <div className="media-content">
-            <p className="title is-4">John Doe</p>
-            <p className="subtitle is-6">johnDoe@gmail.com</p>
-            <p className="subtitle is-6">1233456789</p>
-            <p className="subtitle is-6">Bangalore, India</p>
+            <p className="title is-4">{`${firstName} ${lastName}`}</p>
+            <p className="subtitle is-6">{email}</p>
+            <p className="subtitle is-6">{phone}</p>
+            <p className="subtitle is-6">{location}</p>
           </div>
         </div>
       </div>
@@ -26,4 +26,14 @@ const About = () => {
   );
 };
 
-export default About;
+const mapStateToProps = state => {
+  return {
+    firstName: state.firstName,
+    lastName: state.lastName,
+    email: state.email,
+    phone: state.phone,
+    location: state.location
+  };
+};
+
+export default connect(mapStateToProps)(About);

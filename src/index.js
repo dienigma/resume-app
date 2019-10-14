@@ -1,11 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "bulma/css/bulma.css";
-import ResumeApp from "./components/ResumeApp";
-
+import { Provider } from "react-redux";
+import configureStore from "./store/configureStore";
+import IndexRouter, { history } from "./routes/IndexRouter";
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<ResumeApp />, document.getElementById("root"));
+const store = configureStore();
+
+ReactDOM.render(
+  <Provider store={store}>
+    <IndexRouter />
+  </Provider>,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

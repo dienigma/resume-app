@@ -1,6 +1,6 @@
 import React from "react";
 
-const Education = () => {
+const ProfileOverview = () => {
   return (
     <section
       className="section has-background-white"
@@ -8,12 +8,11 @@ const Education = () => {
     >
       <div className="container">
         <h1 className="title">
-          Education
+          Profile Overview
           <a href="#" className="button is-primary is-pulled-right">
             Edit
           </a>
         </h1>
-
         <p className="content">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec nisi
           vitae diam semper rutrum. Etiam non lectus sodales, rhoncus est
@@ -31,4 +30,4 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default ProfileOverview;
