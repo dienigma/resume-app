@@ -2,6 +2,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+`cd` into the project directories and install dependencies first
+
+### `cd resume-app`
+### `npm i`
+
 In the project directory, you can run:
 
 ### `npm start`
