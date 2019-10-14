@@ -9,6 +9,7 @@ import EditAwards from "../components/EditAwards";
 import EditExperience from "../components/EditExperience";
 import EditSkills from "../components/EditSkills";
 import EditProfile from "../components/EditProfile";
+import EditCertifications from "../components/EditCertifications";
 
 export const history = createHistory();
 
@@ -24,7 +25,7 @@ const IndexRouter = () => {
           <Route path="/editExperience" component={EditExperience} />
           <Route path="/editSkills" component={EditSkills} />
           <Route path="/editProfile" component={EditProfile} />
-
+          <Route path="/editCertifications " component={EditCertifications} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>

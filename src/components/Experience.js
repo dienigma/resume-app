@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Experience = () => {
   return (
     <section
@@ -9,9 +9,12 @@ const Experience = () => {
       <div className="container">
         <h1 className="title">
           Experience
-          <a href="#" className="button is-primary is-pulled-right">
+          <Link
+            to="/editExperience"
+            className="button is-primary is-pulled-right"
+          >
             Edit
-          </a>
+          </Link>
         </h1>
         <p className="content">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec nisi

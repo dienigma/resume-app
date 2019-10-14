@@ -1,7 +1,35 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 class EditEducationForm extends React.Component {
-  state = {};
+  state = {
+    instituteName: "",
+    degree: "",
+    year: "",
+    month: ""
+  };
+  onInstituteNameChange = e => {
+    this.setState({
+      instituteName: e.target.value
+    });
+  };
+  onDegreeChange = e => {
+    this.setState({
+      degree: e.target.value
+    });
+  };
+  onYearChange = e => {
+    this.setState({
+      year: e.target.value
+    });
+  };
+  onMonthChange = e => {
+    this.setState({
+      month: e.target.value
+    });
+  };
+  onHandleSubmit = () => {
+    console.log("Submit Clicked");
+  };
   render() {
     const months = [
       "Jan",
@@ -29,6 +57,8 @@ class EditEducationForm extends React.Component {
                   className="input"
                   type="text"
                   placeholder="Please enter your college name"
+                  value={this.state.instituteName}
+                  onChange={this.onInstituteNameChange}
                 ></input>
               </div>
             </div>
@@ -44,6 +74,8 @@ class EditEducationForm extends React.Component {
                   className="input"
                   type="text"
                   placeholder="Please enter your college name"
+                  value={this.state.degree}
+                  onChange={this.onDegreeChange}
                 ></input>
               </div>
             </div>
@@ -56,9 +88,9 @@ class EditEducationForm extends React.Component {
               <p className="subtitle">Year</p>
               <div className="control">
                 <div className="select">
-                  <select>
+                  <select onChange={this.onMonthChange}>
                     {months.map(month => (
-                      <option>{month}</option>
+                      <option value={month}>{month}</option>
                     ))}
                   </select>
                 </div>
@@ -70,8 +102,22 @@ class EditEducationForm extends React.Component {
                   className="input"
                   type="text"
                   placeholder="please enter the year"
+                  value={this.state.year}
+                  onChange={this.onYearChange}
                 ></input>
               </div>
+            </div>
+            <div className="field is-grouped is-grouped-centered">
+              <p className="control">
+                <a className="button is-primary" onClick={this.onHandleSubmit}>
+                  Submit
+                </a>
+              </p>
+              <p className="control">
+                <Link to="/resume" className="button is-light">
+                  Cancel
+                </Link>
+              </p>
             </div>
           </section>
         </div>

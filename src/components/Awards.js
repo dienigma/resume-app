@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Awards = () => {
   return (
     <section
@@ -9,9 +9,9 @@ const Awards = () => {
       <div className="container">
         <h1 className="title">
           Awards, Events And Publications
-          <a href="#" className="button is-primary is-pulled-right">
+          <Link to="/editAwards" className="button is-primary is-pulled-right">
             Edit
-          </a>
+          </Link>
         </h1>
       </div>
     </section>

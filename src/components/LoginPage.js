@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default () => {
   return (
     <section className="hero is-primary is-large">
@@ -7,9 +7,9 @@ export default () => {
         <div className="container">
           <h1 className="title">Resume App</h1>
           <h2 className="subtitle">Buiid resumes easily.</h2>
-          <button className="button is-primary is-inverted is-large">
+          <Link to="/resume" className="button is-primary is-inverted is-large">
             Login
-          </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Certifications = () => {
   return (
     <section
@@ -9,9 +9,12 @@ const Certifications = () => {
       <div className="container">
         <h1 className="title">
           Certifications
-          <a href="#" className="button is-primary is-pulled-right">
+          <Link
+            to="/editCertifications"
+            className="button is-primary is-pulled-right"
+          >
             Edit
-          </a>
+          </Link>
         </h1>
       </div>
     </section>

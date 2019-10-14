@@ -1,45 +1,78 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const EditAwards = () => {
-  return (
-    <div className="columns" style={{ marginTop: "10px" }}>
-      <div className="column is-three-fifths is-offset-one-fifth">
-        <div className="container">
-          <div className="card">
-            <div className="card-content">
-              <div class="field">
-                <label class="label">Title</label>
-                <div class="control">
-                  <input
-                    class="input"
-                    type="text"
-                    placeholder="Name of the award or certification"
-                  />
+class EditAwards extends React.Component {
+  state = {
+    title: "",
+    description: ""
+  };
+  onChangeTitle = e => {
+    this.setState({
+      title: e.target.value
+    });
+  };
+  onChangeDescription = e => {
+    this.setState({
+      description: e.target.value
+    });
+  };
+  onhandleSubmit = () => {
+    console.log(`Handle clicked.`);
+  };
+  render() {
+    return (
+      <div className="columns" style={{ marginTop: "10px" }}>
+        <div className="column is-three-fifths is-offset-one-fifth">
+          <div className="container">
+            <div className="card">
+              <div className="card-content">
+                <div className="field">
+                  <label className="label">Title</label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type="text"
+                      placeholder="Name of the award or certification"
+                      id="title"
+                      value={this.state.title}
+                      onChange={this.onChangeTitle}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div class="field">
-                <label class="label">Description</label>
-                <div class="control">
-                  <textarea
-                    class="textarea"
-                    placeholder="Go on brag about yourself"
-                  ></textarea>
+                <div className="field">
+                  <label className="label">Description</label>
+                  <div className="control">
+                    <textarea
+                      className="textarea"
+                      placeholder="Go on brag about yourself"
+                      id="description"
+                      value={this.state.description}
+                      onChange={this.onChangeDescription}
+                    ></textarea>
+                  </div>
                 </div>
-              </div>
-              <div className="field is-grouped is-grouped-centered">
-                <p className="control">
-                  <a className="button is-primary">Submit</a>
-                </p>
-                <p className="control">
-                  <a className="button is-light">Cancel</a>
-                </p>
+                <div className="field is-grouped is-grouped-centered">
+                  <p className="control">
+                    <a
+                      className="button is-primary"
+                      onClick={this.onhandleSubmit}
+                    >
+                      Submit
+                    </a>
+                  </p>
+                  <p className="control">
+                    <Link to="/resume" className="button is-light">
+                      Cancel
+                    </Link>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default EditAwards;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProfileOverview = () => {
   return (
@@ -9,9 +10,9 @@ const ProfileOverview = () => {
       <div className="container">
         <h1 className="title">
           Profile Overview
-          <a href="#" className="button is-primary is-pulled-right">
+          <Link to="/editProfile" className="button is-primary is-pulled-right">
             Edit
-          </a>
+          </Link>
         </h1>
         <p className="content">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec nisi

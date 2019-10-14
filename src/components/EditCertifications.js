@@ -1,19 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
-class EditProfile extends React.Component {
+export default class EditCertifications extends Component {
   state = {
-    overview: ""
+    title: "",
+    description: ""
   };
-  onOverviewChange = e => {
+  onChangeTitle = e => {
     this.setState({
-      overview: e.target.value
+      title: e.target.value
     });
   };
-  onHandleSubmit = () => {
-    console.log("Submit called");
+  onChangeDescription = e => {
+    this.setState({
+      description: e.target.value
+    });
   };
-
+  onhandleSubmit = () => {
+    console.log(`Handle clicked.`);
+  };
   render() {
     return (
       <div className="columns" style={{ marginTop: "10px" }}>
@@ -22,13 +26,27 @@ class EditProfile extends React.Component {
             <div className="card">
               <div className="card-content">
                 <div className="field">
-                  <label className="label">Profile Overview</label>
+                  <label className="label">Title</label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type="text"
+                      placeholder="Name of the award or certification"
+                      id="title"
+                      value={this.state.title}
+                      onChange={this.onChangeTitle}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label">Description</label>
                   <div className="control">
                     <textarea
                       className="textarea"
-                      placeholder="Tell us about yourself."
-                      value={this.state.overview}
-                      onChange={this.onOverviewChange}
+                      placeholder="Go on brag about yourself"
+                      id="description"
+                      value={this.state.description}
+                      onChange={this.onChangeDescription}
                     ></textarea>
                   </div>
                 </div>
@@ -36,7 +54,7 @@ class EditProfile extends React.Component {
                   <p className="control">
                     <a
                       className="button is-primary"
-                      onClick={this.onHandleSubmit}
+                      onClick={this.onhandleSubmit}
                     >
                       Submit
                     </a>
@@ -55,5 +73,3 @@ class EditProfile extends React.Component {
     );
   }
 }
-
-export default EditProfile;
