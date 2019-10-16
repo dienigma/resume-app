@@ -15,12 +15,7 @@ const Awards = ({ awards }) => {
             Edit
           </Link>
         </h1>
-        {awards.map(award => {
-          <>
-            <p className="subtitle">{award.title}</p>
-            <p className="content">{award.description}</p>
-          </>;
-        })}
+        {awards.length > 0 && awards.map(award => <p>{award.title}</p>)}
       </div>
     </section>
   );
