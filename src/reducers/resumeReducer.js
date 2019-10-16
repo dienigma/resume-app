@@ -5,6 +5,7 @@ const resumeReducerDefaultState = {
   phoneNumber: "",
   location: "",
   profileOverview: "",
+  highlights: [],
   education: [],
   experience: [],
   awards: [],

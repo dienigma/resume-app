@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const Awards = () => {
+import { connect } from "react-redux";
+
+const Awards = ({ awards }) => {
   return (
     <section
       className="section has-background-white"
@@ -13,9 +15,21 @@ const Awards = () => {
             Edit
           </Link>
         </h1>
+        {awards.map(award => {
+          <>
+            <p className="subtitle">{award.title}</p>
+            <p className="content">{award.description}</p>
+          </>;
+        })}
       </div>
     </section>
   );
 };
 
-export default Awards;
+const mapStateToPros = state => {
+  return {
+    awards: state.awards
+  };
+};
+
+export default connect(mapStateToPros)(Awards);
